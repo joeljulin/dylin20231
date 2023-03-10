@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DyLiN: Making Light Field Networks Dynamic</title>
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="./css/project.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+  </head>
+  
+  <!-- cover -->
+  <body><section>
+    <div class="jumbotron text-center mt-0">
+      <div class="container">
+	  <div class="section logos" style="text-align:center">
+      <IMG src="./images/cmu-wordmark-stacked-r.png" height="80" border="0">
+      </td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      <IMG src="./images/RI_small.png" height="80"
+          border="0"></td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      <IMG src="./images/fujitsu.png" height="60" border="0"></td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      <IMG src="./images/cvpr_logo.png" height="80" border="0">
+      </td>
+    </div></p>
+          <div class="col-12">
+            <h2>DyLiN: Making Light Field Networks Dynamic
+            </h2>
+            <h2>(CVPR 2023 Demo)
+            </h2>            
+            <!-- <h4 style="color:#5a6268;">Arxiv 2022</h4> -->
+            <hr>
+            <h6>
+                <div class="authors">
+					<a href="https://heng14.github.io/" target="_blank">Heng Yu</a><sup> 1</sup>&#160;&#160;
+          <a href="https://joeljulin.github.io" target="_blank">Joel Julin</a><sup> 1</sup>&#160;&#160;
+          <a href="https://scholar.google.com/citations?user=rSqodggAAAAJ&hl=es" target="_blank">Zoltán Á Milacski</a><sup> 1</sup>&#160;&#160;
+					<a href="https://scholar.google.com/citations?user=AFaeUrYAAAAJ&hl=en" target="_blank">Koichiro Niinuma</a><sup> 2</sup>&#160;&#160;
+					<a href="https://www.laszlojeni.com/" target="_blank">László A. Jeni</a><sup> 1</sup>&#160;&#160;
+				</div>
+
+				<div class="affiliations">
+					<sup>1</sup>Carnegie Mellon University&#160;&#160;
+					<sup>2</sup>Fujitsu Research of America&#160;&#160;
+      </div>
+    
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Abstract</h3>
+            <hr style="margin-top:0px">
+            
+            <div class="row" style="margin-bottom:5px">
+              <div class="col" style="text-align:center">
+                <img class="thumbnail" src="./images/front.png" style="width:90%; margin-bottom:20px">
+    
+              </div>
+    
+            </div>
+			
+          <p class="text-left">
+            Light Field Networks, the re-formulations of radiance fields to oriented rays, are magnitudes faster than their coordinate network counterparts, and provide
+            higher fidelity with respect to representing 3D structures from 2D observations. They would be well suited for generic scene representation and manipulation, 
+            but suffer from one problem: they are limited to holistic and static scenes. In this paper, we propose the Dynamic Light Field Network (DyLiN) method that can handle non-rigid deformations,
+             including topological changes. We learn a deformation field from in- put rays to canonical rays, and lift them into a higher dimensional 
+            space to handle discontinuities. We further introduce CoDyLiN, which augments DyLiN with controllable attribute inputs. We train both models 
+            via knowledge distillation from pretrained dynamic radiance fields. We evaluated DyLiN using both synthetic and real world datasets that include non-rigid deformations of 
+            varying difficulty and type. DyLiN outperformed state-of-the art methods in terms of visual fidelity (1.4 − 2.8dB average PSNR improvement) and compute complexity (25 − 71× render time speedup). 
+            We also tested CoDyLiN on attribute annotated data and it surpassed its teacher model.
+		  </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Dynamic Render Comparison</h3>
+            <p>Below demonstrates the rendering quality and speed of our DyLiN (Right) method compared to HyperNeRF (Left), the previous state-of-the-art.</p>
+            <h6>&#128512; NOTE: The Left video is not a still image, it is just moving at 0.34 FPS, while ours renders at a smooth(er) 8.6 FPS&#128512; </h6>
+            <hr style="margin-top:0px">
+            <div class="video-container">
+              <div class="embed-responsive embed-responsive-1by1">
+                <video width="640" height="360" autoplay loop muted>
+                  <source src="./images/americano_hyper.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                
+              </div>
+              <div class="embed-responsive embed-responsive-1by1">
+                <video width="640" height="360" autoplay loop muted>
+                  <source src="./images/americano_ours.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <br>
+            <div class="video-container">
+              <div class="embed-responsive embed-responsive-xbyx">
+                <video width="640" height="360" autoplay loop muted>
+                  <source src="./images/vrigchicken_hyper.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="embed-responsive embed-responsive-xbyx">
+                <video width="640" height="360" autoplay loop muted>
+                  <source src="./images/vrigchicken_ours.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+           
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Controllable Comparison</h3>
+            <p>Below demonstrates the rendering quality of our (Right) method compared to CoNeRF, the previous state-of-the-art (Left).</p>
+            <hr style="margin-top:0px">
+            <div class="embed-responsive embed-responsive-16by9">
+              <video width="640" height="360" autoplay loop muted>
+                <source src="./images/americano.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+      			</div>
+            <div class="embed-responsive embed-responsive-16by9">
+              <video width="640" height="360" autoplay loop muted>
+                <source src="./images/vrigchicken.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+      			</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+
+    </div></body></html>
