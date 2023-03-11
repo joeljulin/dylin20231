@@ -7145,12 +7145,12 @@ button.bg-dark:focus {
   box-sizing: border-box;
 }
 
-/* .video-container video {
+.video-container video {
   width: 50%;
   margin: 0;
   padding: 0;
   display: block;
-} */
+}
 
 .embed-responsive .embed-responsive-item,
 .embed-responsive embed,
@@ -7183,7 +7183,7 @@ button.bg-dark:focus {
 
 
 .embed-responsive-xbyx::before {
-  padding-top: 145%;
+  padding-top: 150%;
 }
 
 .flex-row {
